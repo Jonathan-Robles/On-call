@@ -8,8 +8,8 @@
 
 
 
-
-form.addEventListener("submit", function (e) {
+fm =document.getElementById('form');
+fm.addEventListener("submit", function (e) {
   e.preventDefault()
 
   const result = new FormData(form);

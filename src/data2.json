@@ -7,7 +7,7 @@
         "Reason for call out": ["Personal", "Illness"],
         "Scheduled Shift Time": ["6am -6pm", "6pm-6am"],
         "Shift": ["Full-time", "PRN"],
-        "Contract": ["Local", "Traveler"]
+        "Contract": ["Local", "Traveler","If travel ask for hotel reservation"]
     }        
 
 }

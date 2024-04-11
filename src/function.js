@@ -55,7 +55,7 @@
                   <select id="states" class="form-select" name="Station" >`;
   
           for (const state in data) {
-            temp +=`<OPTION value="${data[state]['station']}">
+            temp +=`<OPTION value="${data[state]['station']} / ${data[state]['abbr']}">
                             ${data[state]['station']} / ${data[state]['abbr']}
                     </OPTION>`
             }

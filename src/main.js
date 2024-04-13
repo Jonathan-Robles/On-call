@@ -20,7 +20,7 @@ fm.addEventListener("submit", function (e) {
 
   x.forEach(function (y) {
       if (y[0] == "Position"){
-          information += "Notes : emptied & open shift. DPM called & notified"
+          information += "Notes : emptied & open shift. DPM called & notified <br>"
       }
     information += `  ${y[0]} : ${y[1]}  <br>`;
   });

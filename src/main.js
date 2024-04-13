@@ -13,12 +13,18 @@ fm.addEventListener("submit", function (e) {
   e.preventDefault()
 
   const result = new FormData(form);
+  console.log(result)
   let x = [...result];
+  console.log(x)
   let information = "";
 
   x.forEach(function (y) {
+      if (y[0] == "Position"){
+          information += "Notes : emptied & open shift. DPM called & notified"
+      }
     information += `  ${y[0]} : ${y[1]}  <br>`;
   });
+  console.log(information)
   prompty.innerHTML = `${information}`;
 });
 
@@ -30,9 +36,10 @@ fm.addEventListener("submit", function (e) {
 // add the elements to the HTML file
 
 
-createdInputText();
+createdInputText(div1);
+createdInputReason(div2);
 
-dropDownStates();
+dropDownStates(div3);
+addDateDropDown(div4);
+createdInputRadio(div5);
 addButton();
-div1.innerHTML += addDateDropDown();
-createdInputRadio();

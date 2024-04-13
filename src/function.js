@@ -1,6 +1,29 @@
 
-  
-  function createdInputText() {
+
+
+function createdInputReason(container) {
+    fetch("src/data2.json")
+      .then((res) => res.json())
+      .then((data) => {
+          let arr= data.reason.Reason_for_call_out;
+          let x="" ;
+          let name = Object.keys(data.reason);
+          let newName = name.toString().replace(/_/g, " ");
+          
+          x += `<div class="container main-box input-group input-group-sm">
+            <lable class="input-group-text bold" for="${newName}">${newName}</lable>`;
+            
+          for (let i = 0; i < arr.length; i++) {
+            x += `<div class="inp-box input-group-text"> <span class="input ">${arr[i]}</span><input name="${newName}" value="${arr[i]}" type="radio"></div>`;
+          }
+          x += `</div>`
+          container.innerHTML = x;
+      })
+}
+
+
+
+  function createdInputText(container) {
     fetch("src/data2.json")
       .then((res) => res.json())
       .then((data) => {
@@ -13,19 +36,19 @@
                       </div>
                   </div>`;
         }
-        div1.innerHTML += x;
+        container.innerHTML = x;
       })
   }
 
 
-  function createdInputRadio() {
+  function createdInputRadio(container) {
     fetch("src/data2.json")
       .then((res) => res.json())
       .then((data) => {
         let x = "";
         for (const index in data.radioInput) {
           arr = data.radioInput[index];
-          // console.log(data.radioInput)
+          console.log(data.radioInput)
   
           x += `<div class="container main-box input-group input-group-sm">
                   <lable class="input-group-text bold" for="${index}">${index}</lable>`
@@ -40,13 +63,13 @@
           }
           x += `</div>`
         }
-        div1.innerHTML += x;
+        container.innerHTML = x;
       })
   }
 
   
 
-  function dropDownStates() {
+  function dropDownStates(container) {
     fetch("src/states.json")
       .then((res) => res.json())
       .then((data) => {
@@ -60,17 +83,17 @@
                     </OPTION>`
             }
         temp += `</select>`
-        div1.innerHTML += temp;
+        container.innerHTML = temp;
       } );
   }
   
-  function addDateDropDown() {
+  function addDateDropDown(container) {
     let x = `<div class="container main-box ">
       <div class="input-group input-group-sm">
       <lable class="input-group-text bold" for="Scheduled Shift Date">Scheduled Shift Date</lable>
       <input class="form-control" id="Scheduled Shift Date" name="Scheduled Shift Date" type="date">
       </div></div>`;
-    return x;  
+container.innerHTML = x;
   }
 
   function addButton() {
@@ -78,6 +101,6 @@
             submitBtn.innerHTML = "Click to generate notes below ";
             submitBtn.setAttribute("type", "submit");
             submitBtn.setAttribute("class", "btn btn-primary");    
-    form.innerHTML += submitBtn.outerHTML;
+    form.appendChild(submitBtn);
 
   }

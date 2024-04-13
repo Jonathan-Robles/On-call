@@ -2,13 +2,17 @@
     "textInput": {
         "Employee Name":""
     },
-    "radioInput":{
-        "Position": ["PA", "NP", "EMT", "CNA", "CMA"],
-        "Reason for call out": ["Personal Matter", "Illness"],
-        "Scheduled Shift Time": ["6am-6pm", "6pm-6am"],
-        "Shift": ["Full-time", "PRN"],
-        "Contract": ["Local", "Traveler"]
-    }        
-
+    "reason":{
+        "Reason_for_call_out": ["Personal Matter", "Illness"]
+        
+    },
+        
+        "radioInput":{
+            "Scheduled Shift Time": ["6am-6pm", "6pm-6am"],
+            "Position": ["PA", "NP", "EMT", "CNA", "CMA"],
+            "Shift": ["Full-time", "PRN"],
+            "Contract": ["Local", "Traveler"]
+        }        
+        
 }
 

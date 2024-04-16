@@ -1,45 +1,39 @@
-// alt + shift + f    => Format the code
+// let prueba = addOptionsToSelect
+  
+PRUEBA.addEventListener('change', function () {
+  if (prueba.value == "Illness" || prueba.value == "Personal Matter") {
+    prueba.previousElementSibling.textContent = "Reason for call out";
+    prueba.name = "Reason for call out";
+  } else {
+    prueba.previousElementSibling.textContent = "Reason";
+    prueba.name = "Reason";
+  }
+  console.log('hola')
+})
 
-// const app = document.getElementById("app");
-// const myForm = document.createElement("form");
-
-// myForm.setAttribute("id", "form");
-// app.appendChild(myForm);
-
-
-
-fm =document.getElementById('form');
+let fm = document.getElementById('form');
 fm.addEventListener("submit", function (e) {
   e.preventDefault()
 
   const result = new FormData(form);
-  console.log(result)
   let x = [...result];
-  console.log(x)
   let information = "";
+  let additionalInfo = document.getElementById('info').value;
+  additionalInfo = additionalInfo.replaceAll("'","").replaceAll("[","").replaceAll("]","").split(',');
 
-  x.forEach(function (y) {
-      if (y[0] == "Position"){
-          information += "Notes : emptied & open shift. DPM called & notified <br>"
-      }
-    information += `  ${y[0]} : ${y[1]}  <br>`;
+  x.forEach( y =>{
+        information += `  ${y[0]} : ${y[1]}  <br>`;
   });
-  console.log(information)
-  prompty.innerHTML = `${information}`;
+  information += "Notes : emptied & open shift. DPM called & notified <br>"
+  prompty.innerHTML = `${information}<br>`;
+
+  additionalInfo.forEach(item=>{
+    console.log(item.trim())
+  })
+const ARR = ['Name','Position','Modality','Term','SF-#']  
+  for(const i in additionalInfo){
+    prompty.innerHTML += `${ARR[i]} : ${additionalInfo[i]}<br>`;
+
+  }
+
 });
-
-
-
-
-
-
-// add the elements to the HTML file
-
-
-createdInputText(div1);
-createdInputReason(div2);
-
-dropDownStates(div3);
-addDateDropDown(div4);
-createdInputRadio(div5);
-addButton();

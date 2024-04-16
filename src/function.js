@@ -1,106 +1,146 @@
+//Array for reasons.
+const reasons = {
+  'Reason': [
+    "choose...",
+    "Personal Matter",
+    "Illness",
+    "Pick a shift",
+    "Arriving Late"
+  ]
+}
+
+
+const NAME = document.getElementById('name');
+NAME.innerHTML = textInp('Employee Name', 'text')
+
+div3.innerHTML += container(textInp('Scheduled Shift Date', 'date'));
+
+addButton();
+
+function container(inner) {
+  let div = document.createElement('DIV');
+  div.classList.add('container', 'main-box', 'input-group', 'input-group-sm');
+  div.innerHTML = inner;
+  return div.outerHTML;
+}
+
+function textInp(item, type) {
+  let label = document.createElement('label');
+  label.setAttribute('for', item);
+  label.textContent = item;
+  let input = document.createElement('INPUT');
+  input.setAttribute('type', type);
+  input.name = item;
+  return label.outerHTML + input.outerHTML;
+}
+
+function options(arr) {
+  let elements = '';
+  arr.forEach(item => {
+    const option = document.createElement('option');
+    option.setAttribute('value', item);
+    option.textContent = item;
+    elements += option.outerHTML;
+  })
+  return elements
+}
+
+const PRUEBA = document.getElementById('prueba');
+PRUEBA.innerHTML = options(reasons.Reason);
+
+
+function selector(arr, selName) {
+  let label = document.createElement('label');
+  label.textContent = selName;
+  label.classList.add('input-group-text', 'bold');
+  const select = document.createElement('SELECT');
+  select.classList.add('class', 'form-select');
+  select.name = selName;
+  select.id = selName;
+
+  arr.forEach(item => {
+    const option = document.createElement('OPTION');
+    option.setAttribute('value', item);
+    option.textContent = item;
+    select.appendChild(option)
+  })
+  return label.outerHTML + select.outerHTML;
+}
+
+/// FETCHING STATIONS JSON FILE
+let x = '';
+fetch("src/states.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let x = Object.values(data);
+    let abbr = [];
+    x.forEach(item => {
+      abbr.push(item.abbr + ' / ' + item.station)
+    })
+    let div2 = document.getElementById('div2');
+    div2.innerHTML += container(selector(abbr, 'Station'));
+  });
 
 
 
-function createdInputReason(container) {
-    fetch("src/data2.json")
-      .then((res) => res.json())
-      .then((data) => {
-          let arr= data.reason.Reason_for_call_out;
-          let x="" ;
-          let name = Object.keys(data.reason);
-          let newName = name.toString().replace(/_/g, " ");
-          
-          x += `<div class="container main-box input-group input-group-sm">
-            <lable class="input-group-text bold" for="${newName}">${newName}</lable>`;
-            
-          for (let i = 0; i < arr.length; i++) {
-            x += `<div class="inp-box input-group-text"> <span class="input ">${arr[i]}</span><input name="${newName}" value="${arr[i]}" type="radio"></div>`;
-          }
-          x += `</div>`
-          container.innerHTML = x;
-      })
+fetch("src/data2.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let x = "";
+    for (const index in data.radioInput) {
+      arr = data.radioInput[index];
+      console.log(data.radioInput)
+
+      x += `<div class="container main-box input-group input-group-sm">
+                  <label class="input-group-text bold" for="${index}">${index}</label>`
+
+      for (let i = 0; i < arr.length; i++) {
+        x += `<div class="inp-box input-group-text">
+              <span class="input ">${arr[i]}</span>
+              <input name="${index}" value="${arr[i]}" type="radio">
+              </div>`}
+      x += `</div>`
+    }
+    let div3 = document.getElementById('div3');
+    div3.innerHTML += x;
+  })
+
+
+function addButton() {
+  const submitBtn = document.createElement("button");
+  submitBtn.innerHTML = "Click to generate notes below ";
+  submitBtn.setAttribute("type", "submit");
+  submitBtn.setAttribute("class", "btn btn-primary");
+  form.innerHTML += submitBtn.outerHTML;
+
 }
 
 
 
-  function createdInputText(container) {
-    fetch("src/data2.json")
-      .then((res) => res.json())
-      .then((data) => {
-        let x = "";
-        for (const property in data.textInput) {
-          x += `<div class="container main-box ">
-                      <div class="input-group input-group-sm">
-                          <lable class="input-group-text bold" for="${property}">${property}</lable>
-                          <input class="form-control" id="${property}" name="${property}" type="text">
-                      </div>
-                  </div>`;
-        }
-        container.innerHTML = x;
-      })
-  }
+const divContainer = document.getElementsByTagName('div');
+Object.keys(divContainer).forEach((item) => {
+  divContainer[item].classList.add('container', 'main-box', 'input-group', 'input-group-sm')
+});
 
 
-  function createdInputRadio(container) {
-    fetch("src/data2.json")
-      .then((res) => res.json())
-      .then((data) => {
-        let x = "";
-        for (const index in data.radioInput) {
-          arr = data.radioInput[index];
-          console.log(data.radioInput)
-  
-          x += `<div class="container main-box input-group input-group-sm">
-                  <lable class="input-group-text bold" for="${index}">${index}</lable>`
-  
-          for (let i = 0; i < arr.length; i++) {
-            // console.log(arr);
-  
-            x += `<div class="inp-box input-group-text">
-                                  <span class="input ">${arr[i]}</span>
-                                  <input name="${index}" value="${arr[i]}" type="radio">
-                                  </div>`
-          }
-          x += `</div>`
-        }
-        container.innerHTML = x;
-      })
-  }
+const lblFormat = document.getElementsByTagName('label')
+Object.keys(lblFormat).forEach((item) => {
+  lblFormat[item].classList.add('input-group-text', 'bold')
+});
 
-  
+const inpFormat = document.getElementsByTagName('input')
+Object.keys(inpFormat).forEach((item) => {
+  inpFormat[item].classList.add('form-control')
+});
 
-  function dropDownStates(container) {
-    fetch("src/states.json")
-      .then((res) => res.json())
-      .then((data) => {
-        let temp =`<div class="container main-box input-group input-group-sm">
-                  <lable class="input-group-text bold" for="">Station</lable>
-                  <select id="states" class="form-select" name="Station" >`;
-  
-          for (const state in data) {
-            temp +=`<OPTION value="${data[state]['station']} / ${data[state]['abbr']}">
-                            ${data[state]['station']} / ${data[state]['abbr']}
-                    </OPTION>`
-            }
-        temp += `</select>`
-        container.innerHTML = temp;
-      } );
-  }
-  
-  function addDateDropDown(container) {
-    let x = `<div class="container main-box ">
-      <div class="input-group input-group-sm">
-      <lable class="input-group-text bold" for="Scheduled Shift Date">Scheduled Shift Date</lable>
-      <input class="form-control" id="Scheduled Shift Date" name="Scheduled Shift Date" type="date">
-      </div></div>`;
-container.innerHTML = x;
-  }
+const sltFormat = document.getElementsByTagName("select")
+Object.keys(sltFormat).forEach((item) => {
+  sltFormat[item].classList.add('class', 'form-select');
+});
 
-  function addButton() {
-    const submitBtn = document.createElement("button");
-            submitBtn.innerHTML = "Click to generate notes below ";
-            submitBtn.setAttribute("type", "submit");
-            submitBtn.setAttribute("class", "btn btn-primary");    
-    form.appendChild(submitBtn);
+//// SELECTOR REASON LABEL SWITCHER
 
-  }
+
+
+
+

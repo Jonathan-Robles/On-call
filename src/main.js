@@ -33,7 +33,12 @@ fm.addEventListener("submit", function (e) {
 const ARR = ['Name','Position','Availability','Travel/Local','Organization Sector', 'Job Title', 'Facility Location']  
   for(const i in additionalInfo){
     prompty.innerHTML += `${ARR[i]} : ${additionalInfo[i]}<br>`;
-
   }
+    let time = document.getElementById("time");
+    let id = document.getElementById("id");
+  
+    prompty.innerHTML+= `Time : ${time.value} <br>`;
+    prompty.innerHTML+= `SalesForce Id : ${id.value} <br>`
+  
 
 });

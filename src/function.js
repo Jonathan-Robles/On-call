@@ -1,7 +1,7 @@
 //Array for reasons.
 const reasons = {
   'Reason': [
-    "choose...",
+    "choose... /",
     "Personal Matter",
     "Illness",
     "Pick a shift",

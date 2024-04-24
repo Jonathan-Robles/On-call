@@ -30,9 +30,17 @@ fm.addEventListener("submit", function (e) {
   additionalInfo.forEach(item=>{
     console.log(item.trim())
   })
-const ARR = ['Name','Position','Availability','Travel/Local','Organization Sector', 'Job Title', 'Facility Location']  
+const ARR = [
+    'Name',
+'Position',
+'Availability',
+'Travel/Local',
+'Organization Sector', 
+'Job Title', 
+'Facility Location'];
+
   for(const i in additionalInfo){
-    prompty.innerHTML += `${ARR[i]} : ${additionalInfo[i]}<br>`;
+    prompty.innerHTML += `${additionalInfo[i]}<br>`;
   }
     let time = document.getElementById("time");
     let id = document.getElementById("id");

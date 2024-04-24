@@ -1,1 +1,358 @@
-[{"abbr":"Choose...","station":" "},{"abbr":"*","station":"Forest Gate Facility "},{"abbr":"*","station":"Newton Azrak Murrieta BPS "},{"abbr":"*","station":"Otay Mesa"},{"abbr":"*","station":"Rio Grande City BPS"},{"abbr":"*","station":"SAD"},{"abbr":"*","station":"San Clemente"},{"abbr":"BBT","station":"Alpine Station BPS"},{"abbr":"BBT","station":"Presidio OFO"},{"abbr":"BBT","station":"Presidio Station BPS"},{"abbr":"BBT","station":"Sanderson Station BPS"},{"abbr":"BBT","station":"Sierra Blanca Station BPS"},{"abbr":"BBT","station":"Van Horn Station BPS"},{"abbr":"DRT","station":"Bracketville BPS"},{"abbr":"DRT","station":"Carrizo Springs BPS"},{"abbr":"DRT","station":"Comstock BPS"},{"abbr":"DRT","station":"Del Rio POE"},{"abbr":"DRT","station":"Del Rio Station BPS"},{"abbr":"DRT","station":"Eagle Pass FireFly - SSPF-North"},{"abbr":"DRT","station":"Eagle Pass POE "},{"abbr":"DRT","station":"Eagle Pass South BPS"},{"abbr":"DRT","station":"Uvalde BPS"},{"abbr":"ELC","station":"Calexico BPS"},{"abbr":"ELC","station":"Calexico POE"},{"abbr":"ELC","station":"El Centro BPS"},{"abbr":"EPT","station":"Bridge of America - BOTA OFO"},{"abbr":"EPT","station":"Clint BPS "},{"abbr":"EPT","station":"Columbus OFO"},{"abbr":"EPT","station":"Deming BPS"},{"abbr":"EPT","station":"El Paso Hardened Facility   "},{"abbr":"EPT","station":"El Paso SFF"},{"abbr":"EPT","station":"Fort Hancock BPS"},{"abbr":"EPT","station":"Lordsburg BPS"},{"abbr":"EPT","station":"Paso Del Norte OFO"},{"abbr":"EPT","station":"Paso Del Texas Processing Center "},{"abbr":"EPT","station":"Santa Teresa BPS"},{"abbr":"EPT","station":"Santa Teresa OFO"},{"abbr":"EPT","station":"Tornillo OFO"},{"abbr":"EPT","station":"Ysleta BPS  "},{"abbr":"EPT","station":"Ysleta OFO"},{"abbr":"LRT","station":"Cotulla BPS "},{"abbr":"LRT","station":"Gateway to America - Laredo Bridge 1 POE  "},{"abbr":"LRT","station":"Hebbronville BPS"},{"abbr":"LRT","station":"Laredo CPC SSF "},{"abbr":"LRT","station":"Laredo North  "},{"abbr":"LRT","station":"Laredo South BPS"},{"abbr":"LRT","station":"Laredo West Station BPS  "},{"abbr":"MIP","station":"Dania Beach"},{"abbr":"MIP","station":"Marathon  "},{"abbr":"MIP","station":"West Palm Beach "},{"abbr":"RGV","station":"Brownsville BPS"},{"abbr":"RGV","station":"Brownsville POE"},{"abbr":"RGV","station":"Donna SSF - Alpha  "},{"abbr":"RGV","station":"Donna SSF - Bravo"},{"abbr":"RGV","station":"Donna SSF - Charlie"},{"abbr":"RGV","station":"Donna SSF - Med Pass "},{"abbr":"RGV","station":"Donna SSF - Out Take "},{"abbr":"RGV","station":"Falfurrias BPS"},{"abbr":"RGV","station":"Fort Brown BPS"},{"abbr":"RGV","station":"Harlingen BPS"},{"abbr":"RGV","station":"Hidalgo POE"},{"abbr":"RGV","station":"McAllen BPS"},{"abbr":"RGV","station":"RGV CPC Ursula Alpha ( 22k side ) "},{"abbr":"RGV","station":"RGV CPC Ursula Bravo ( 55k side ) "},{"abbr":"RGV","station":"Weslaco BPS"},{"abbr":"SDC","station":"Barracks 5 BPS "},{"abbr":"SDC","station":"Boulevard BPS"},{"abbr":"SDC","station":"Brown Field BPS"},{"abbr":"SDC","station":"Campo BPS"},{"abbr":"SDC","station":"Chula Vista BPS"},{"abbr":"SDC","station":"Imperial Beach BPS"},{"abbr":"SDC","station":"San Ysidro POE"},{"abbr":"TCA","station":"Ajo BPS "},{"abbr":"TCA","station":"Casa Grande BPS"},{"abbr":"TCA","station":"Douglas BPS"},{"abbr":"TCA","station":"Douglas POE"},{"abbr":"TCA","station":"Naco BPS "},{"abbr":"TCA","station":"Nogales POE"},{"abbr":"TCA","station":"Nogales Processing Center"},{"abbr":"TCA","station":"Sonoita BPS"},{"abbr":"TCA","station":"Tucson Coordination Center "},{"abbr":"TCA","station":"Tucson SSF"},{"abbr":"TCA","station":"Willcox BPS"},{"abbr":"YUM","station":"San Luis POE"},{"abbr":"YUM","station":"Wellton BPS"},{"abbr":"YUM","station":"Yuma Main BPS"},{"abbr":"YUM","station":"Yuma SSF - Alpha "},{"abbr":"YUM","station":"Yuma SSF - Bravo "},{"abbr":"YUM","station":"Yuma SSF - Charlie "}]
+[
+    {
+        "abbr": "Choose...",
+        "station": " "
+    },
+    {
+        "abbr": "*",
+        "station": "Forest Gate Facility "
+    },
+    {
+        "abbr": "*",
+        "station": "Newton Azrak Murrieta BPS "
+    },
+    {
+        "abbr": "*",
+        "station": "Otay Mesa"
+    },
+    {
+        "abbr": "*",
+        "station": "San Clemente"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Alpine Station BPS"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Presidio OFO"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Presidio Station BPS"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Sanderson Station BPS"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Sierra Blanca Station BPS"
+    },
+    {
+        "abbr": "BBT",
+        "station": "Van Horn Station BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Bracketville BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Carrizo Springs BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Comstock BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Del Rio POE"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Del Rio Station BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Eagle Pass FireFly - SSPF-North"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Eagle Pass POE "
+    },
+    {
+        "abbr": "DRT",
+        "station": "Eagle Pass South BPS"
+    },
+    {
+        "abbr": "DRT",
+        "station": "Uvalde BPS"
+    },
+    {
+        "abbr": "ELC",
+        "station": "Calexico BPS"
+    },
+    {
+        "abbr": "ELC",
+        "station": "Calexico POE"
+    },
+    {
+        "abbr": "ELC",
+        "station": "El Centro BPS"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Bridge of America - BOTA OFO"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Clint BPS "
+    },
+    {
+        "abbr": "EPT",
+        "station": "Columbus OFO"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Deming BPS"
+    },
+    {
+        "abbr": "EPT",
+        "station": "El Paso Hardened Facility   "
+    },
+    {
+        "abbr": "EPT",
+        "station": "El Paso SFF"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Fort Hancock BPS"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Lordsburg BPS"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Paso Del Norte OFO"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Paso Del Texas Processing Center "
+    },
+    {
+        "abbr": "EPT",
+        "station": "Santa Teresa BPS"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Santa Teresa OFO"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Tornillo OFO"
+    },
+    {
+        "abbr": "EPT",
+        "station": "Ysleta BPS  "
+    },
+    {
+        "abbr": "EPT",
+        "station": "Ysleta OFO"
+    },
+    {
+        "abbr": "LRT",
+        "station": "Cotulla BPS "
+    },
+    {
+        "abbr": "LRT",
+        "station": "Gateway to America - Laredo Bridge 1 POE  "
+    },
+    {
+        "abbr": "LRT",
+        "station": "Hebbronville BPS"
+    },
+    {
+        "abbr": "LRT",
+        "station": "Laredo CPC SSF "
+    },
+    {
+        "abbr": "LRT",
+        "station": "Laredo North  "
+    },
+    {
+        "abbr": "LRT",
+        "station": "Laredo South BPS"
+    },
+    {
+        "abbr": "LRT",
+        "station": "Laredo West Station BPS  "
+    },
+    {
+        "abbr": "MIP",
+        "station": "Dania Beach"
+    },
+    {
+        "abbr": "MIP",
+        "station": "Marathon  "
+    },
+    {
+        "abbr": "MIP",
+        "station": "West Palm Beach "
+    },
+    {
+        "abbr": "RGV",
+        "station": "Brownsville BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Brownsville POE"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Donna SSF - Alpha  "
+    },
+    {
+        "abbr": "RGV",
+        "station": "Donna SSF - Bravo"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Donna SSF - Charlie"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Donna SSF - Med Pass "
+    },
+    {
+        "abbr": "RGV",
+        "station": "Donna SSF - Out Take "
+    },
+    {
+        "abbr": "RGV",
+        "station": "Falfurrias BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Fort Brown BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Harlingen BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Hidalgo POE"
+    },
+    {
+        "abbr": "RGV",
+        "station": "McAllen BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "RGV CPC Ursula Alpha ( 22k side ) "
+    },
+    {
+        "abbr": "RGV",
+        "station": "RGV CPC Ursula Bravo ( 55k side ) "
+    },
+    {
+        "abbr": "RGV",
+        "station": "Rio Grande City BPS"
+    },
+    {
+        "abbr": "RGV",
+        "station": "Weslaco BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "Barracks 5 BPS "
+    },
+    {
+        "abbr": "SDC",
+        "station": "Boulevard BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "Brown Field BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "Campo BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "Chula Vista BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "Imperial Beach BPS"
+    },
+    {
+        "abbr": "SDC",
+        "station": "SAD"
+    },
+    {
+        "abbr": "SDC",
+        "station": "San Ysidro POE"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Ajo BPS "
+    },
+    {
+        "abbr": "TCA",
+        "station": "Casa Grande BPS"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Douglas BPS"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Douglas POE"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Naco BPS "
+    },
+    {
+        "abbr": "TCA",
+        "station": "Nogales POE"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Nogales Processing Center"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Sonoita BPS"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Tucson Coordination Center "
+    },
+    {
+        "abbr": "TCA",
+        "station": "Tucson SSF"
+    },
+    {
+        "abbr": "TCA",
+        "station": "Willcox BPS"
+    },
+    {
+        "abbr": "YUM",
+        "station": "San Luis POE"
+    },
+    {
+        "abbr": "YUM",
+        "station": "Wellton BPS"
+    },
+    {
+        "abbr": "YUM",
+        "station": "Yuma Main BPS"
+    },
+    {
+        "abbr": "YUM",
+        "station": "Yuma SSF - Alpha "
+    },
+    {
+        "abbr": "YUM",
+        "station": "Yuma SSF - Bravo "
+    },
+    {
+        "abbr": "YUM",
+        "station": "Yuma SSF - Charlie "
+    }
+]

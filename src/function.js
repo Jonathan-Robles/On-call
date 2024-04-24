@@ -108,7 +108,7 @@ fetch("src/data2.json")
 
 function addButton() {
   const submitBtn = document.createElement("button");
-  submitBtn.innerHTML = "Click to generate notes below ";
+  submitBtn.innerHTML = "Submit";
   submitBtn.setAttribute("type", "submit");
   submitBtn.setAttribute("class", "btn btn-primary");
   form.innerHTML += submitBtn.outerHTML;

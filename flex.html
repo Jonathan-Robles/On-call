@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <!-- CSS only -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <main>
+        <form action="">
+            <fieldset>
+                <legend>Flexing</legend>
+                <div class="container main-box input-group input-group-sm">                
+                    <label for="name" class="input-group-text bold">Name 1</label>
+                    <input type="text" name="name">
+                </div>
+
+                <div class="container main-box input-group input-group-sm">
+                <label for="name" class="input-group-text bold">Name 2</label>
+                <input type="text" name="name">
+            </div>
+
+            <div class="container main-box input-group input-group-sm">
+                <label for="Scheduled Shift Date" class="input-group-text bold">Scheduled Shift Date</label>
+                <input type="date" name="Scheduled Shift Date" class="form-control">
+            </div>
+
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <p id="prompty"></p>
+     
+    </main>
+    
+</body>
+<script src="src/function.js"></script>
+<script src="src/main.js"></script>
+
+
+<script>
+// let x = '';
+fetch("src/states.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let x = Object.values(data);
+    let abbr = [];
+    x.forEach(item => {
+      abbr.push(item.station + ' / ' + item.abbr )
+    })
+    let element = document.getElementsByTagName('fieldset');
+    element[0].innerHTML += container(selector(abbr, 'Station From'));
+    element[0].innerHTML += container(selector(abbr, 'Station To'));
+  })
+
+
+
+let flexForm = document.getElementsByTagName('form');
+flexForm[0].addEventListener("submit", function (e) {
+  e.preventDefault()
+
+  const result = new FormData(flexForm[0]);
+  let x = [...result];
+  let information = "";
+  
+  x.forEach( y =>{
+        information += `  ${y[0]} : ${y[1]}  <br>`;
+  });
+  
+  prompty.innerHTML = `${information}<br>`;
+
+});
+
+</script>
+</html>

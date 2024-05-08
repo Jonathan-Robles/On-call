@@ -128,10 +128,14 @@ Object.keys(lblFormat).forEach((item) => {
   lblFormat[item].classList.add('input-group-text', 'bold')
 });
 
-const inpFormat = document.getElementsByTagName('input')
-Object.keys(inpFormat).forEach((item) => {
-  inpFormat[item].classList.add('form-control')
-});
+function setInputFormat(){
+  const inpFormat = document.getElementsByTagName('input')
+  Object.keys(inpFormat).forEach((item) => {
+    inpFormat[item].classList.add('form-control')
+  });
+}
+
+//setInputFormat();
 
 const sltFormat = document.getElementsByTagName("select")
 Object.keys(sltFormat).forEach((item) => {

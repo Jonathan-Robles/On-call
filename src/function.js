@@ -5,7 +5,8 @@ const reasons = {
     "Personal Matter",
     "Illness",
     "Pick a shift",
-    "Arriving Late"
+    "Late",
+    "Leave Early"
   ]
 }
 

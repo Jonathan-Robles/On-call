@@ -4,9 +4,10 @@ const reasons = {
     "choose... /",
     "Personal Matter",
     "Illness",
-    "Pick a shift",
     "Late",
-    "Leave Early"
+    "Leave Early",
+    "Inquiry/Notes",
+    "NCNS",
   ]
 }
 

@@ -4,22 +4,6 @@
         "station": " "
     },
     {
-        "abbr": "*",
-        "station": "Forest Gate Facility "
-    },
-    {
-        "abbr": "*",
-        "station": "Newton Azrak Murrieta BPS "
-    },
-    {
-        "abbr": "*",
-        "station": "Otay Mesa"
-    },
-    {
-        "abbr": "*",
-        "station": "San Clemente"
-    },
-    {
         "abbr": "BBT",
         "station": "Alpine Station BPS"
     },
@@ -275,13 +259,34 @@
         "abbr": "SDC",
         "station": "Chula Vista BPS"
     },
+    
+    {
+        "abbr": "SDC",
+        "station": "Forest Gate Facility "
+    },
     {
         "abbr": "SDC",
         "station": "Imperial Beach BPS"
     },
     {
         "abbr": "SDC",
-        "station": "SAD"
+        "station": "Newton Azrak Murrieta BPS "
+    },
+    {
+        "abbr": "SDC",
+        "station": "Otay Mesa"
+    },
+    {
+        "abbr": "SDC",
+        "station": "SAD Intake"
+    },
+    {
+        "abbr": "SDC",
+        "station": "SAD Sick Call"
+    },
+    {
+        "abbr": "SDC",
+        "station": "San Clemente"
     },
     {
         "abbr": "SDC",

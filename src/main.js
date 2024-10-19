@@ -19,7 +19,7 @@ window.onload = function(){
 		
 		console.log(dateInputElement.value);
 	}else{
-		console.log(`No element found with ID: ${dateInputElement.id}`);
+		console.log(`No element found with ID:`);
 	}
 }
 

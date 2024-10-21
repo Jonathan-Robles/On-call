@@ -1,11 +1,6 @@
-//Array for reasons.
-const reasons = {
-    'Reason': ["choose... /", "Personal Matter", "Illness", "Late", "Leave Early", "Inquiry/Notes", "NCNS"]
-}
 
-
-const EMPLOYEEID = document.getElementById('employeeId');
-EMPLOYEEID.innerHTML =
+const employeeInfoContainer = document.getElementById('employee-info-container');
+employeeInfoContainer.innerHTML =
     container(textInp('info', 'text')) +
     container(textInp('Cand_id', 'text')) +
     container(textInp('Employee_Name', 'text'));
@@ -33,19 +28,28 @@ function textInp(item, type) {
     return label.outerHTML + input.outerHTML;
 }
 
-function options(arr) {
-    let elements = '';
-    arr.forEach(item => {
-        const option = document.createElement('option');
-        option.setAttribute('value', item);
-        option.textContent = item;
-        elements += option.outerHTML;
-    })
-    return elements
+
+const callReasonOptions  = ["choose... /", "Personal Matter", "Illness", "Late", "Leave Early", "Inquiry/Notes", "NCNS"];
+
+function createDropdownOptions(optionsArray){
+    return optionsArray.map(item => `<option value="${item}">${item}</option>`).join('');
 }
 
-const PRUEBA = document.getElementById('prueba');
-PRUEBA.innerHTML = options(reasons.Reason);
+const reasonDropdown = document.getElementById('reason-dropdown');
+reasonDropdown.innerHTML = createDropdownOptions(callReasonOptions);
+
+
+reasonDropdown.addEventListener('change', function () {
+    const selectedReason = reasonDropdown.value;
+    const isSpecialReason = (selectedReason === "Illness" || selectedReason === "Personal Matter");
+    // Operador ternario
+    const labelText = isSpecialReason ? "Reason for call out" : "Reason";
+
+    // Actualizar label y name
+    reasonDropdown.previousElementSibling.textContent = labelText;
+    reasonDropdown.name = labelText;
+});
+
 
 
 function selector(arr, selName) {
@@ -69,9 +73,10 @@ function selector(arr, selName) {
 /// FETCHING STATIONS JSON FILE
 let x = '';
 fetch("src/states.json")
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => {
         let x = Object.values(data);
+        console.log(x)
         let abbr = [];
         x.forEach(item => {
             abbr.push(item.abbr + ' / ' + item.station)

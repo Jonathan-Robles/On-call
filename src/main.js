@@ -7,6 +7,7 @@ function convertDateToISOFormat(dateString) {
 	return `${parts[2]}-${parts[1]}-${parts[0]}`;
 }
 
+
 window.onload = function(){
 	
 	let dateObject = new Date;
@@ -19,23 +20,14 @@ window.onload = function(){
 		
 		console.log(dateInputElement.value);
 	}else{
-		console.log(`No element found with ID: ${dateInputElement.id}`);
+		console.log(`No element found with ID:`);
 	}
 }
 
 
 
 
-PRUEBA.addEventListener('change', function () {
-	if (prueba.value == "Illness" || prueba.value == "Personal Matter") {
-		prueba.previousElementSibling.textContent = "Reason for call out";
-		prueba.name = "Reason for call out";
-	} else {
-		prueba.previousElementSibling.textContent = "Reason";
-		prueba.name = "Reason";
-	}
 
-})
 
 
 

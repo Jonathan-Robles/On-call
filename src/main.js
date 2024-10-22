@@ -8,52 +8,34 @@ function convertDateToISOFormat(dateString) {
 }
 
 
-window.onload = function(){
-	
-	let dateObject = new Date;
-	let	dateStr2 = dateObject.toLocaleDateString().slice(0,10);
-	let isoDate = convertDateToISOFormat(dateStr2);
-	
-	let dateInputElement = document.getElementById('Scheduled Shift Date');
-	if(dateInputElement){
-		dateInputElement.value = isoDate;
-		
-		console.log(dateInputElement.value);
-	}else{
-		console.log(`No element found with ID:`);
-	}
-}
 
-
-
-
-
-
-
-
+let stationElement = document.getElementById('Station');
 let saleforceId = document.getElementById('Cand_id');
 
 saleforceId.addEventListener('change', function () {
 	let storedData = localStorage.getItem(saleforceId.value);
-
 	if (storedData) {
 		let lsData = JSON.parse(storedData)
-
 		Object.keys(lsData).forEach(item => {
 			let field = document.getElementById(item);
-
 			if (field) {
 				field.value = lsData[item];
+				if (field.id == 'Station') {
+					createWdLinks(field);
+				}
 			} else {
 				console.warn(`No form field found with ID: ${item}`);
 			}
 		});
-
-		console.log(lsData);
 	} else {
+		let stationElement = document.getElementById('Station');
+		if (stationElement) {
+			stationElement.addEventListener('change', () => {
+				createWdLinks(stationElement);
+			})
+		} 
 		console.warn('No data found in localStorage for the given ID');
 	}
-
 })
 
 
@@ -79,16 +61,6 @@ formTag.addEventListener("submit", function (e) {
 	localStorage.setItem(obj2.Cand_id, JSON.stringify(obj2))
 
 
-
-
-
-
-	// console.log(saleforceId.value)
-
-	// console.log(localStorage[obj2.Cand_id]);
-	// console.log(saleforceId.value);
-
-
 	information += "Notes : emptied & open shift. DPM called & notified <br>"
 	prompty.innerHTML = `${information} <br>`;
 
@@ -106,8 +78,53 @@ formTag.addEventListener("submit", function (e) {
 	prompty.innerHTML += `Time : ${time.value} <br>`;
 	// prompty.innerHTML+= `SalesForce Id : ${id.value} <br>`
 
-
-
 });
 
 
+
+
+function createWdLinks(stationValue) {
+
+	let dateObject = new Date;
+	// let stationElement = document.getElementById('Station');
+
+	let firstPart = 'https://wd5.myworkday.com/loyalsource/d/app/wfs-scheduler/index$.htmld/';
+	let secondPart = '$.htmld/calendar$.htmld/week$.htmld/';
+	let date = convertDateToISOFormat(dateObject.toLocaleDateString());
+	let finalPart = '$.htmld';
+
+	const workdayLinks = [
+		{ id: "d4ba9a1fd0821001443e26c8cdb50000", name: "Alexa", sector: "YUM", sector2: "EPT" },
+		{ id: "d4ba9a1fd0821001443e06e888ba0000", name: "Amanda", sector: "LRT", sector2: "SDC" },
+		{ id: "ea208a98a8f61001af7295abb5b60000", name: "Brianna", sector: "DRT", sector2: "" },
+		{ id: "ea208a98a8f61001afdcf7cd4a0c0000", name: "Carolyne", sector: "YUM", sector2: "" },
+		{ id: "ea208a98a8f61001af6c999dc3830000", name: "Courtney", sector: "LRT", sector2: "" },
+		{ id: "d4ba9a1fd0821001443e20c4dff00000", name: "Emma", sector: "TCA", sector2: "" },
+		{ id: "ea208a98a8f61001afa54f416fac0000", name: "Kyle", sector: "BBT", sector2: "" },
+		{ id: "d4ba9a1fd0821001443e017d780f0000", name: "Fiona", sector: "EPT", sector2: "" },
+		{ id: "d4ba9a1fd0821001443dffae7cc40002", name: "Taylor", sector: "RGV", sector2: "" }
+
+	];
+
+
+	// stationElement.addEventListener('change', function () {
+	let sectoress = stationValue.value.slice(0, 3);
+	// createWdLinks(sectores);
+	// console.log('hola');
+	// console.log(stationElement.value.slice(0, 3));
+	// });
+
+	let managerData = workdayLinks.filter(item => item.sector == sectoress || item.sector2 == sectoress);
+
+	let managerLink = managerData.map(item => {
+		return {
+			name: item.name,
+			link: firstPart + item.id + secondPart + date + finalPart
+		};
+	});
+
+	const navElement = document.getElementById('pss-link');
+	navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join('- -');
+
+
+}

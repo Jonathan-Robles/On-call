@@ -86,6 +86,7 @@ fetch("src/states.json")
     });
 
 
+   
 
 fetch("src/data2.json")
     .then((res) => res.json())
@@ -147,8 +148,6 @@ Object.keys(sltFormat).forEach((item) => {
 });
 
 //// SELECTOR REASON LABEL SWITCHER
-
-
 
 
 

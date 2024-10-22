@@ -36,3 +36,14 @@ body {
 .inp-box input {
   font-size: 50px;
 }
+
+#pss-link{
+  float: right;
+  width: max-content;
+}
+
+
+#pss-link a{
+  margin: auto;
+  padding: inherit;
+}

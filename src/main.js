@@ -60,13 +60,10 @@ formTag.addEventListener("submit", function (e) {
 
 	localStorage.setItem(obj2.Cand_id, JSON.stringify(obj2))
 
-
 	information += "Notes : emptied & open shift. DPM called & notified <br>"
 	prompty.innerHTML = `${information} <br>`;
 
 	const ARR = ['Name', 'Position', 'Availability', 'Travel/Local', 'Organization Sector', 'Job Title', 'Facility Location'];
-
-	// console.log(additionalInfo)
 
 	for (const i in additionalInfo) {
 		prompty.innerHTML += ` ${additionalInfo[i]} <br> `;
@@ -75,8 +72,7 @@ formTag.addEventListener("submit", function (e) {
 	let time = document.getElementById("time");
 	let id = document.getElementById("id");
 
-	prompty.innerHTML += `Time : ${time.value} <br>`;
-	// prompty.innerHTML+= `SalesForce Id : ${id.value} <br>`
+	prompty.innerHTML += `Time : ${time.value} <br>`
 
 });
 
@@ -86,8 +82,6 @@ formTag.addEventListener("submit", function (e) {
 function createWdLinks(stationValue) {
 
 	let dateObject = new Date;
-	// let stationElement = document.getElementById('Station');
-
 	let firstPart = 'https://wd5.myworkday.com/loyalsource/d/app/wfs-scheduler/index$.htmld/';
 	let secondPart = '$.htmld/calendar$.htmld/week$.htmld/';
 	let date = convertDateToISOFormat(dateObject.toLocaleDateString());
@@ -106,16 +100,8 @@ function createWdLinks(stationValue) {
 
 	];
 
-
-	// stationElement.addEventListener('change', function () {
 	let sectoress = stationValue.value.slice(0, 3);
-	// createWdLinks(sectores);
-	// console.log('hola');
-	// console.log(stationElement.value.slice(0, 3));
-	// });
-
 	let managerData = workdayLinks.filter(item => item.sector == sectoress || item.sector2 == sectoress);
-
 	let managerLink = managerData.map(item => {
 		return {
 			name: item.name,
@@ -124,7 +110,7 @@ function createWdLinks(stationValue) {
 	});
 
 	const navElement = document.getElementById('pss-link');
-	navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join('- -');
+	navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join(' ');
 
 
 }

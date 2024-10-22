@@ -4,7 +4,7 @@ function convertDateToISOFormat(dateString) {
 	// Split the date string assuming it is in dd/MM/yyyy format
 	let parts = dateString.split('/');
 	// Rearrange the parts to yyyy-MM-dd
-	return `${parts[2]}-${parts[1]}-${parts[0]}`;
+	return `${parts[2]}-${parts[0]}-${parts[1]}`;
 }
 
 

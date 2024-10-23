@@ -88,13 +88,13 @@ function createWdLinks(stationValue) {
 	let finalPart = '$.htmld';
 
 	const workdayLinks = [
-		{ id: "d4ba9a1fd0821001443e26c8cdb50000", name: "Alexa", sector: "YUM", sector2: "EPT" },
-		{ id: "d4ba9a1fd0821001443e06e888ba0000", name: "Amanda", sector: "LRT", sector2: "SDC" },
+		{ id: "d4ba9a1fd0821001443e26c8cdb50000", name: "Alexa", sector: "YUM", sector2: "" },
+		{ id: "d4ba9a1fd0821001443e06e888ba0000", name: "Amanda", sector: "SDC", sector2: "" },
 		{ id: "ea208a98a8f61001af7295abb5b60000", name: "Brianna", sector: "DRT", sector2: "" },
-		{ id: "ea208a98a8f61001afdcf7cd4a0c0000", name: "Carolyne", sector: "YUM", sector2: "" },
+		{ id: "ea208a98a8f61001afdcf7cd4a0c0000", name: "Carolyne", sector: "ELC", sector2: "" },
 		{ id: "ea208a98a8f61001af6c999dc3830000", name: "Courtney", sector: "LRT", sector2: "" },
 		{ id: "d4ba9a1fd0821001443e20c4dff00000", name: "Emma", sector: "TCA", sector2: "" },
-		{ id: "ea208a98a8f61001afa54f416fac0000", name: "Kyle", sector: "BBT", sector2: "" },
+		{ id: "ea208a98a8f61001afa54f416fac0000", name: "Kyle", sector: "BBT", sector2: "MIP" },
 		{ id: "d4ba9a1fd0821001443e017d780f0000", name: "Fiona", sector: "EPT", sector2: "" },
 		{ id: "d4ba9a1fd0821001443dffae7cc40002", name: "Taylor", sector: "RGV", sector2: "" }
 

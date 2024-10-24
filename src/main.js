@@ -80,7 +80,6 @@ formTag.addEventListener("submit", function (e) {
 
 
 function createWdLinks(stationValue) {
-
 	let dateObject = new Date;
 	let firstPart = 'https://wd5.myworkday.com/loyalsource/d/app/wfs-scheduler/index$.htmld/';
 	let secondPart = '$.htmld/calendar$.htmld/week$.htmld/';
@@ -97,7 +96,6 @@ function createWdLinks(stationValue) {
 		{ id: "ea208a98a8f61001afa54f416fac0000", name: "Kyle", sector: "BBT", sector2: "MIP" },
 		{ id: "d4ba9a1fd0821001443e017d780f0000", name: "Fiona", sector: "EPT", sector2: "" },
 		{ id: "d4ba9a1fd0821001443dffae7cc40002", name: "Taylor", sector: "RGV", sector2: "" }
-
 	];
 
 	let sectoress = stationValue.value.slice(0, 3);
@@ -110,7 +108,7 @@ function createWdLinks(stationValue) {
 	});
 
 	const navElement = document.getElementById('pss-link');
+	window.open(managerLink[0].link);
+	// console.log(managerLink);
 	navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join(' ');
-
-
 }

@@ -32,7 +32,8 @@ function textInp(item, type) {
 const callReasonOptions  = ["choose... /", "Personal Matter", "Illness", "Late", "Leave Early", "Inquiry/Notes", "NCNS"];
 
 function createDropdownOptions(optionsArray){
-    return optionsArray.map(item => `<option value="${item}">${item}</option>`).join('');
+    return optionsArray.map(item => 
+        `<option value="${item}">${item}</option>`).join('');
 }
 
 const reasonDropdown = document.getElementById('reason-dropdown');
@@ -56,6 +57,7 @@ function selector(arr, selName) {
     let label = document.createElement('label');
     label.textContent = selName;
     label.classList.add('input-group-text', 'bold');
+    
     const select = document.createElement('SELECT');
     select.classList.add('class', 'form-select');
     select.name = selName;

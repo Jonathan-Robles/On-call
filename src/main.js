@@ -53,7 +53,9 @@ formTag.addEventListener("submit", function (e) {
 	additionalInfo = additionalInfo.replaceAll('"', " ").replaceAll("{", "").replaceAll("}", "").split(',');
 
 	formData.forEach(y => {
+		if(y[0] !=='info'){
 		information += `  ${y[0]} : ${y[1]}  <br>`;
+		}
 	});
 
 	let obj2 = Object.fromEntries(formData);

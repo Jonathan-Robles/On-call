@@ -50,7 +50,7 @@ formTag.addEventListener("submit", function (e) {
 	let information = "";
 
 	let additionalInfo = document.getElementById('info').value;
-	additionalInfo = additionalInfo.replaceAll('"', " ").replaceAll("{", "").replaceAll("}", "").replaceAll("'", "").replaceAll("[", "").replaceAll("]", "").ARRsplit(',');
+	additionalInfo = additionalInfo.replaceAll('"', " ").replaceAll("{", "").replaceAll("}", "").replaceAll("'", "").replaceAll("[", "").replaceAll("]", "").split(',');
 
 	formData.forEach(y => {
 		if(y[0] !=='info'){

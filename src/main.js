@@ -38,7 +38,36 @@ saleforceId.addEventListener('change', function () {
 	}
 })
 
+let employeeName = document.getElementById('Employee_Name');
 
+employeeName.addEventListener('change', function () {
+
+	let saleforceId = Object.keys(localStorage).filter(item => localStorage[item].includes(employeeName.value))
+
+	let storedData = localStorage.getItem(saleforceId[0]);
+	if (storedData) {
+		let lsData = JSON.parse(storedData)
+		Object.keys(lsData).forEach(item => {
+			let field = document.getElementById(item);
+			if (field) {
+				field.value = lsData[item];
+				if (field.id == 'Station') {
+					createWdLinks(field);
+				}
+			} else {
+				console.warn(`No form field found with ID: ${item}`);
+			}
+		});
+	} else {
+		let stationElement = document.getElementById('Station');
+		if (stationElement) {
+			stationElement.addEventListener('change', () => {
+				createWdLinks(stationElement);
+			})
+		} 
+		console.warn('No data found in localStorage for the given ID');
+	}
+})
 
 let formTag = document.getElementById('form');
 

@@ -5,14 +5,28 @@ function convertDateToISOFormat(dateString) {
     return `${parts[2]}-${parts[0]}-${parts[1]}`;
 }
 // Función para filtrar las claves de localStorage según el valor proporcionado
-function filterLocalStorageByValue(searchValue) {
-    if (!searchValue.trim()) return []; // Verifica si el valor está vacío o solo contiene espacios
 
-    return Object.keys(localStorage).filter(key => {
-        const itemValue = localStorage[key];
-        return itemValue.includes(searchValue);
-    });
+function filterLocalStorageByValue(searchValue) {
+    // Verifica si el valor está vacío o solo contiene espacios
+    if (!searchValue.trim()) return []; 
+
+    if (!isNaN(Number(searchValue))) {  // Verifica si `searchValue` es un número
+        console.log('Es un número:', searchValue, typeof(Number(searchValue)));
+        return Object.keys(localStorage).filter(key => key == searchValue);
+    } else {
+        console.log('No es un número');
+        return Object.keys(localStorage).filter(key => {
+            const itemValue = localStorage.getItem(key);
+            if (itemValue) {
+                return itemValue.includes(searchValue);
+            }
+            return false;
+        });
+    }
 }
+
+
+
 
 function createWdLinks(stationValue) {
     let dateObject = new Date;
@@ -52,6 +66,8 @@ function changeEventListener(inputElement) {
 
     inputElement.addEventListener('change', function () {
         const filteredIds = filterLocalStorageByValue(inputElement.value);
+console.log(filteredIds)
+
         let storedData = localStorage.getItem(filteredIds[0]);
         if (storedData) {
             let lsData = JSON.parse(storedData)

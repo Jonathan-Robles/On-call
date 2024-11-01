@@ -110,7 +110,7 @@ formElement.addEventListener("submit", function (e) {
 
 	information += "Notes : emptied & open shift. DPM called & notified <br>"
 	if (formDataObj.Station) {
-		information += getManagerNames(formDataObj.Station.slice(6).trim());
+		information += getManagerNames(formDataObj.Station.slice(6).trim())+'<br>';
 	} else {
 		console.error("Station value is undefined or empty.");
 	}

@@ -8,10 +8,10 @@ function convertDateToISOFormat(dateString) {
 
 function filterLocalStorageByValue(searchValue) {
     // Verifica si el valor está vacío o solo contiene espacios
-    if (!searchValue.trim()) return []; 
+    if (!searchValue.trim()) return [];
 
     if (!isNaN(Number(searchValue))) {  // Verifica si `searchValue` es un número
-        console.log('Es un número:', searchValue, typeof(Number(searchValue)));
+        console.log('Es un número:', searchValue, typeof (Number(searchValue)));
         return Object.keys(localStorage).filter(key => key == searchValue);
     } else {
         console.log('No es un número');
@@ -24,9 +24,6 @@ function filterLocalStorageByValue(searchValue) {
         });
     }
 }
-
-
-
 
 function createWdLinks(stationValue) {
     let dateObject = new Date;
@@ -57,7 +54,9 @@ function createWdLinks(stationValue) {
     });
 
     const navElement = document.getElementById('pss-link');
-    window.open(managerLink[0].link);
+    if ((managerLink[0].link)) {
+        window.open(managerLink[0].link);
+    }
     // console.log(managerLink);
     navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join(' ');
 }
@@ -66,7 +65,7 @@ function changeEventListener(inputElement) {
 
     inputElement.addEventListener('change', function () {
         const filteredIds = filterLocalStorageByValue(inputElement.value);
-console.log(filteredIds)
+        console.log(filteredIds)
 
         let storedData = localStorage.getItem(filteredIds[0]);
         if (storedData) {
@@ -145,7 +144,6 @@ function textInp(item, type) {
     return label.outerHTML + input.outerHTML;
 }
 
-
 const callReasonOptions = [
     "choose... /",
     "Personal Matter",
@@ -166,7 +164,6 @@ function createDropdownOptions(optionsArray) {
 const reasonDropdown = document.getElementById('reason-dropdown');
 reasonDropdown.innerHTML = createDropdownOptions(callReasonOptions);
 
-
 reasonDropdown.addEventListener('change', function () {
     const selectedReason = reasonDropdown.value;
     const isSpecialReason = (selectedReason === "Illness" || selectedReason === "Personal Matter");
@@ -177,8 +174,6 @@ reasonDropdown.addEventListener('change', function () {
     reasonDropdown.previousElementSibling.textContent = labelText;
     reasonDropdown.name = labelText;
 });
-
-
 
 function selector(arr, selName) {
     let label = document.createElement('label');
@@ -246,16 +241,12 @@ function addButton() {
     submitBtn.setAttribute("type", "submit");
     submitBtn.setAttribute("class", "btn btn-primary");
     form.innerHTML += submitBtn.outerHTML;
-
 }
-
-
 
 const divContainer = document.getElementsByTagName('div');
 Object.keys(divContainer).forEach((item) => {
     divContainer[item].classList.add('container', 'main-box', 'input-group', 'input-group-sm')
 });
-
 
 const lblFormat = document.getElementsByTagName('label')
 Object.keys(lblFormat).forEach((item) => {

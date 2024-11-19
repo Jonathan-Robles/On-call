@@ -147,15 +147,16 @@ function textInp(item, type) {
 const callReasonOptions = [
     "choose... /",
     "Personal Matter",
-    "Illness", "Late",
+    "Illness", 
+    "Late",
     "Leave Early",
     "Inquiry/Notes",
     "NCNS",
-    "Cover a shift",
+    "Covering a shift",
     "Clocking in/out issue",
     "Hotel / Checking in/out issue",
     "Flexing EE",
-    "Swap",
+    "Swapping EE",
 ];
 
 function createDropdownOptions(optionsArray) {

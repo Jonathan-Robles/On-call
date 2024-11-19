@@ -152,8 +152,10 @@ const callReasonOptions = [
     "Inquiry/Notes",
     "NCNS",
     "Cover a shift",
+    "Clocking in/out issue",
     "Hotel / Checking in/out issue",
-    "Flexing EE"
+    "Flexing EE",
+    "Swap",
 ];
 
 function createDropdownOptions(optionsArray) {

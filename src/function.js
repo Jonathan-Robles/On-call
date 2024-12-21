@@ -49,8 +49,10 @@ function createWdLinks(stationValue) {
         { id: "b3dfeb4648f210011ba4a4be88f50000", name: "RGV-Donna", sector: "RGV", sector2: "" },
         { id: "6fcca292a2111001538123259f6b0000", name: "LRT-Sector", sector: "LRT", sector2: "" },
         { id: "6fcca292a2111001538cb83903910000", name: "MIP-Sector", sector: "MIP", sector2: "" },
-        { id: "6fcca292a211100153649940c89a0000", name: "EPT-Sector", sector: "EPT", sector2: "" },
+
+        { id: "4d26233016e9100153649940c89a0000", name: "EPT-Sector", sector: "EPT", sector2: "" },
         { id: "b3dfeb4648f210011ba4a4be88f40000", name: "EPT-Hard", sector: "EPT", sector2: "" },
+
         { id: "4d26233016e9100152ec389897c90000", name: "ELC-Sector", sector: "ELC", sector2: "" },
         { id: "4d26233016e9100152ddb730a28f0000", name: "DRT-Sector", sector: "DRT", sector2: "" },
         { id: "b3dfeb4648f2100151bf4949060d0000", name: "DRT-Firefly", sector: "DRT", sector2: "" },

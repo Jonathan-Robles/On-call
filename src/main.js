@@ -7,63 +7,6 @@ const excelFileElement = document.getElementById('excel-file');
 changeEventListener(saleforceId);
 changeEventListener(employeeName);
 
-// saleforceId.addEventListener('change', function () {
-// 	const filteredIds = filterLocalStorageByValue(saleforceId.value);
-// 	let storedData = localStorage.getItem(filteredIds);
-// 	if (storedData) {
-// 		let lsData = JSON.parse(storedData)
-// 		Object.keys(lsData).forEach(item => {
-// 			let field = document.getElementById(item);
-// 			if (field) {
-// 				field.value = lsData[item];
-// 				if (field.id == 'Station') {
-// 					createWdLinks(field);
-// 				}
-// 			} else {
-// 				console.warn(`No form field found with ID: ${item}`);
-// 			}
-// 		});
-// 	} else {
-// 		let stationElement = document.getElementById('Station');
-// 		if (stationElement) {
-// 			stationElement.addEventListener('change', () => {
-// 				createWdLinks(stationElement);
-// 			})
-// 		} 
-// 		console.warn('No data found in localStorage for the given ID');
-// 	}
-// })
-
-
-
-// employeeName.addEventListener('change', function () {
-
-// 	let filteredId = Object.keys(localStorage).filter(item => localStorage[item].includes(employeeName.value))
-
-// 	let storedData = localStorage.getItem(filteredId[0]);
-// 	if (storedData) {
-// 		let lsData = JSON.parse(storedData)
-// 		Object.keys(lsData).forEach(item => {
-// 			let field = document.getElementById(item);
-// 			if (field) {
-// 				field.value = lsData[item];
-// 				if (field.id == 'Station') {
-// 					createWdLinks(field);
-// 				}
-// 			} else {
-// 				console.warn(`No form field found with ID: ${item}`);
-// 			}
-// 		});
-// 	} else {
-// 		let stationElement = document.getElementById('Station');
-// 		if (stationElement) {
-// 			stationElement.addEventListener('change', () => {
-// 				createWdLinks(stationElement);
-// 			})
-// 		} 
-// 		console.warn('No data found in localStorage for the given ID');
-// 	}
-// })
 class Excel {
 	constructor(content) {
 		this.content = content;

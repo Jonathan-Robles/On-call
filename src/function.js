@@ -33,34 +33,26 @@ function createWdLinks(stationValue) {
     let finalPart = '$.htmld';
 
     const workdayLinks = [
-        // { id: "d4ba9a1fd0821001443e26c8cdb50000", name: "Alexa", sector: "YUM", sector2: "" },
-        // { id: "d4ba9a1fd0821001443e06e888ba0000", name: "Amanda", sector: "SDC", sector2: "" },
-        // { id: "d4ba9a1fd0821001443dffae7cc40002", name: "Taylor", sector: "RGV", sector2: "" },
-        // { id: "ea208a98a8f61001af6c999dc3830000", name: "Courtney", sector: "LRT", sector2: "" },
-        // { id: "d4ba9a1fd0821001443e017d780f0000", name: "Fiona", sector: "EPT", sector2: "" },
-        // { id: "ea208a98a8f61001afdcf7cd4a0c0000", name: "Carolyne", sector: "ELC", sector2: "" },
-        // { id: "ea208a98a8f61001af7295abb5b60000", name: "Brianna", sector: "DRT", sector2: "" },
+        { id: "4d26233016e9100153b9704e86700000", name: "Alexa", sector: "YUM" },
+        { id: "4d26233016e91001539565218bb00000", name: "Amanda", sector: "SDC" },
+        { id: "4d26233016e9100153a96796bc160000", name: "TCA-Sector", sector: "TCA" },
+        { id: "b3dfeb4648f210011ba4a4be88f30000", name: "TCA-SSF", sector: "TCA" },
+        { id: "6fcca292a21110015397dc34e60a0000", name: "RGV-Sector", sector: "RGV" },
+        { id: "b3dfeb4648f210011ba4a4be88f50000", name: "RGV-Donna", sector: "RGV" },
+        { id: "6fcca292a2111001538123259f6b0000", name: "LRT-Sector", sector: "LRT" },
+        { id: "6fcca292a2111001538cb83903910000", name: "MIP-Sector", sector: "MIP" },
 
-        { id: "4d26233016e9100153b9704e86700000", name: "Alexa", sector: "YUM", sector2: "" },
-        { id: "4d26233016e91001539565218bb00000", name: "Amanda", sector: "SDC", sector2: "" },
-        { id: "b3dfeb4648f210011ba4a4be88f30000", name: "TCA-SSF", sector: "TCA", sector2: "" },
-        { id: "4d26233016e9100153a96796bc160000", name: "TCA-Sector", sector: "TCA", sector2: "" },
-        { id: "6fcca292a21110015397dc34e60a0000", name: "RGV-Sector", sector: "RGV", sector2: "" },
-        { id: "b3dfeb4648f210011ba4a4be88f50000", name: "RGV-Donna", sector: "RGV", sector2: "" },
-        { id: "6fcca292a2111001538123259f6b0000", name: "LRT-Sector", sector: "LRT", sector2: "" },
-        { id: "6fcca292a2111001538cb83903910000", name: "MIP-Sector", sector: "MIP", sector2: "" },
+        { id: "4d26233016e9100153649940c89a0000", name: "EPT-Sector", sector: "EPT" },
+        { id: "b3dfeb4648f210011ba4a4be88f40000", name: "EPT-Hard", sector: "EPT" },
 
-        { id: "4d26233016e9100153649940c89a0000", name: "EPT-Sector", sector: "EPT", sector2: "" },
-        { id: "b3dfeb4648f210011ba4a4be88f40000", name: "EPT-Hard", sector: "EPT", sector2: "" },
-
-        { id: "4d26233016e9100152ec389897c90000", name: "ELC-Sector", sector: "ELC", sector2: "" },
-        { id: "4d26233016e9100152ddb730a28f0000", name: "DRT-Sector", sector: "DRT", sector2: "" },
-        { id: "b3dfeb4648f2100151bf4949060d0000", name: "DRT-Firefly", sector: "DRT", sector2: "" },
-        { id: "6fcca292a211100152d4c60dfe600000", name: "BBT-Sector", sector: "BBT", sector2: "" }
+        { id: "4d26233016e9100152ec389897c90000", name: "ELC-Sector", sector: "ELC" },
+        { id: "4d26233016e9100152ddb730a28f0000", name: "DRT-Sector", sector: "DRT" },
+        { id: "b3dfeb4648f2100151bf4949060d0000", name: "DRT-Firefly", sector: "DRT" },
+        { id: "6fcca292a211100152d4c60dfe600000", name: "BBT-Sector", sector: "BBT" }
     ];
 
     let sectoress = stationValue.value.slice(0, 3);
-    let managerData = workdayLinks.filter(item => item.sector == sectoress || item.sector2 == sectoress);
+    let managerData = workdayLinks.filter(item => item.sector == sectoress);
     let managerLink = managerData.map(item => {
         return {
             name: item.name,

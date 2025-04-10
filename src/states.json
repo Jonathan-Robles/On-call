@@ -5,15 +5,15 @@
     },
     {
         "abbr": "BBT",
-        "station": "Alpine Station BPS"
+        "station": "Alpine BPS"
     },
     {
         "abbr": "BBT",
-        "station": "Presidio OFO"
+        "station": "Presidio POE"
     },
     {
         "abbr": "BBT",
-        "station": "Presidio Station BPS"
+        "station": "Presidio BPS"
     },
     {
         "abbr": "BBT",
@@ -21,15 +21,15 @@
     },
     {
         "abbr": "BBT",
-        "station": "Sierra Blanca Station BPS"
+        "station": "Sierra Blanca BPS"
     },
     {
         "abbr": "BBT",
-        "station": "Van Horn Station BPS"
+        "station": "Van Horn BPS"
     },
     {
         "abbr": "DRT",
-        "station": "Bracketville BPS"
+        "station": "Brackettville BPS"
     },
     {
         "abbr": "DRT",
@@ -45,7 +45,7 @@
     },
     {
         "abbr": "DRT",
-        "station": "Del Rio Station BPS"
+        "station": "Del Rio BPS"
     },
     {
         "abbr": "DRT",
@@ -77,7 +77,7 @@
     },
     {
         "abbr": "EPT",
-        "station": "Bridge of America - BOTA OFO"
+        "station": "Bridge of Americas POE "
     },
     {
         "abbr": "EPT",
@@ -85,7 +85,7 @@
     },
     {
         "abbr": "EPT",
-        "station": "Columbus OFO"
+        "station": "Columbus POE"
     },
     {
         "abbr": "EPT",
@@ -93,7 +93,7 @@
     },
     {
         "abbr": "EPT",
-        "station": "El Paso Hardened Facility   "
+        "station": "El Paso HF Alpha"
     },
     {
         "abbr": "EPT",
@@ -109,7 +109,7 @@
     },
     {
         "abbr": "EPT",
-        "station": "Paso Del Norte OFO"
+        "station": "Paso Del Norte POE"
     },
     {
         "abbr": "EPT",
@@ -121,11 +121,11 @@
     },
     {
         "abbr": "EPT",
-        "station": "Santa Teresa OFO"
+        "station": "Santa Teresa POE"
     },
     {
         "abbr": "EPT",
-        "station": "Tornillo OFO"
+        "station": "Tornillo POE"
     },
     {
         "abbr": "EPT",
@@ -133,7 +133,7 @@
     },
     {
         "abbr": "EPT",
-        "station": "Ysleta OFO"
+        "station": "Ysleta POE"
     },
     {
         "abbr": "LRT",
@@ -141,7 +141,7 @@
     },
     {
         "abbr": "LRT",
-        "station": "Gateway to America - Laredo Bridge 1 POE  "
+        "station": "Gateway to the Americas Bridge Laredo POE"
     },
     {
         "abbr": "LRT",
@@ -149,11 +149,11 @@
     },
     {
         "abbr": "LRT",
-        "station": "Laredo CPC SSF "
+        "station": "Laredo CPC SSF"
     },
     {
         "abbr": "LRT",
-        "station": "Laredo North  "
+        "station": "Laredo North BPS"
     },
     {
         "abbr": "LRT",
@@ -161,15 +161,15 @@
     },
     {
         "abbr": "LRT",
-        "station": "Laredo West Station BPS  "
+        "station": "Laredo West BPS"
     },
     {
         "abbr": "MIP",
-        "station": "Dania Beach"
+        "station": "Dania Beach BPS"
     },
     {
         "abbr": "MIP",
-        "station": "Marathon  "
+        "station": "Marathon BPS"
     },
     {
         "abbr": "MIP",
@@ -181,27 +181,7 @@
     },
     {
         "abbr": "RGV",
-        "station": "Brownsville POE"
-    },
-    {
-        "abbr": "RGV",
-        "station": "Donna SSF - Alpha  "
-    },
-    {
-        "abbr": "RGV",
-        "station": "Donna SSF - Bravo"
-    },
-    {
-        "abbr": "RGV",
-        "station": "Donna SSF - Charlie"
-    },
-    {
-        "abbr": "RGV",
-        "station": "Donna SSF - Med Pass "
-    },
-    {
-        "abbr": "RGV",
-        "station": "Donna SSF - Out Take "
+        "station": "Gateway"
     },
     {
         "abbr": "RGV",
@@ -221,27 +201,11 @@
     },
     {
         "abbr": "RGV",
-        "station": "McAllen BPS"
-    },
-    {
-        "abbr": "RGV",
-        "station": "RGV CPC Ursula Alpha ( 22k side ) "
-    },
-    {
-        "abbr": "RGV",
-        "station": "RGV CPC Ursula Bravo ( 55k side ) "
+        "station": "RGV CPC Ursula Alpha"
     },
     {
         "abbr": "RGV",
         "station": "Rio Grande City BPS"
-    },
-    {
-        "abbr": "RGV",
-        "station": "Weslaco BPS"
-    },
-    {
-        "abbr": "SDC",
-        "station": "Barracks 5 BPS "
     },
     {
         "abbr": "SDC",
@@ -259,22 +223,17 @@
         "abbr": "SDC",
         "station": "Chula Vista BPS"
     },
-    
-    {
-        "abbr": "SDC",
-        "station": "Forest Gate Facility "
-    },
     {
         "abbr": "SDC",
         "station": "Imperial Beach BPS"
     },
     {
         "abbr": "SDC",
-        "station": "Newton Azrak Murrieta BPS "
+        "station": "Newton Azrak (Murrieta) BPS"
     },
     {
         "abbr": "SDC",
-        "station": "Otay Mesa"
+        "station": "Otay Mesa POE"
     },
     {
         "abbr": "SDC",
@@ -286,15 +245,15 @@
     },
     {
         "abbr": "SDC",
-        "station": "San Clemente"
+        "station": "San Clemente BPS"
     },
     {
         "abbr": "SDC",
-        "station": "San Ysidro POE"
+        "station": "SYS AEU"
     },
     {
         "abbr": "TCA",
-        "station": "Ajo BPS "
+        "station": "Ajo BPS"
     },
     {
         "abbr": "TCA",
@@ -310,7 +269,7 @@
     },
     {
         "abbr": "TCA",
-        "station": "Naco BPS "
+        "station": "Brian A. Terry (Naco) BPS"
     },
     {
         "abbr": "TCA",
@@ -318,7 +277,7 @@
     },
     {
         "abbr": "TCA",
-        "station": "Nogales Processing Center"
+        "station": "Nogales Processing Facility"
     },
     {
         "abbr": "TCA",
@@ -346,18 +305,6 @@
     },
     {
         "abbr": "YUM",
-        "station": "Yuma Main BPS"
-    },
-    {
-        "abbr": "YUM",
-        "station": "Yuma SSF - Alpha "
-    },
-    {
-        "abbr": "YUM",
-        "station": "Yuma SSF - Bravo "
-    },
-    {
-        "abbr": "YUM",
-        "station": "Yuma SSF - Charlie "
+        "station": "Yuma BPS"
     }
 ]

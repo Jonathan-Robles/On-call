@@ -125,6 +125,7 @@ function getManagerNames(stationName) {
 const employeeInfoContainer = document.getElementById('employee-info-container');
 employeeInfoContainer.innerHTML =
     container(textInp('info', 'text')) +
+    container(textInp('sf_link', 'text')) +
     container(textInp('Cand_id', 'text')) +
     container(textInp('Employee_Name', 'text'));
 

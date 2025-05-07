@@ -45,6 +45,10 @@ formElement.addEventListener("submit", function (e) {
 		if (y[0] !== 'info') {
 			information += `  ${y[0]} : ${y[1]}  <br>`;
 		}
+		if (y[0] !== 'sf_link') {
+			information += `  ${y[0]} : <a>${y[1]}</a>  <br>`;
+		}
+		
 	});
 
 	let formDataObj = Object.fromEntries(formData);

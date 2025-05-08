@@ -1,9 +1,10 @@
 function convertDateToISOFormat(dateString) {
     // Split the date string assuming it is in dd/MM/yyyy format
     let parts = dateString.split('/');
-    // Rearrange the parts to yyyy-MM-dd
+    // Rearrange the parts to be yyyy-MM-dd
     return `${parts[2]}-${parts[0]}-${parts[1]}`;
 }
+
 // Función para filtrar las claves de localStorage según el valor proporcionado
 
 function filterLocalStorageByValue(searchValue) {
@@ -22,6 +23,31 @@ function filterLocalStorageByValue(searchValue) {
             }
             return false;
         });
+    }}
+
+
+
+
+function getCustomLinkInput() {
+    const inputLink = document.getElementById('sf_link');
+    const inputName = document.getElementById('Employee_Name');
+    const url = inputLink?.value.trim();
+    if (url) {
+        return { name: inputName?.value, link: url };
+    }
+    return null;
+}
+
+function openManagerLinks(managerLinks, openAll = false) {
+    if (managerLinks.length === 0) {
+        console.warn('No manager links to open.');
+        return;
+    }
+
+    if (openAll) {
+        managerLinks.forEach(linkObj => window.open(linkObj.link));
+    } else {
+        window.open(managerLinks[0].link);
     }
 }
 
@@ -31,6 +57,8 @@ function createWdLinks(stationValue) {
     let secondPart = '$.htmld/calendar$.htmld/week$.htmld/';
     let date = convertDateToISOFormat(dateObject.toLocaleDateString());
     let finalPart = '$.htmld';
+
+    console.log(date)
 
     const workdayLinks = [
         { id: "4d26233016e9100153b9704e86700000", name: "Alexa", sector: "YUM" },
@@ -60,11 +88,11 @@ function createWdLinks(stationValue) {
         };
     });
 
+    managerLink.push(getCustomLinkInput())
+    
+    openManagerLinks(managerLink, false); // true para abrir todos
+    
     const navElement = document.getElementById('pss-link');
-    if ((managerLink[0].link)) {
-        window.open(managerLink[0].link);
-    }
-    // console.log(managerLink);
     navElement.innerHTML = managerLink.map(item => `<a href="${item.link}" target="_blank">${item.name}</a>`).join(' ');
 }
 
@@ -77,8 +105,10 @@ function changeEventListener(inputElement) {
         let storedData = localStorage.getItem(filteredIds[0]);
         if (storedData) {
             let lsData = JSON.parse(storedData)
+            console.log(lsData)
             Object.keys(lsData).forEach(item => {
                 let field = document.getElementById(item);
+ 
                 if (field) {
                     field.value = lsData[item];
                     if (field.id == 'Station') {
@@ -87,6 +117,8 @@ function changeEventListener(inputElement) {
                 } else {
                     console.warn(`No form field found with ID: ${item}`);
                 }
+
+
             });
         } else {
             let stationElement = document.getElementById('Station');

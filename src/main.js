@@ -1,11 +1,13 @@
-let stationElement = document.getElementById('Station');
+// let stationElement = document.getElementById('Station');
 const saleforceId = document.getElementById('Cand_id');
-const employeeName = document.getElementById('Employee_Name');
-const formElement = document.getElementById('form');
-const excelFileElement = document.getElementById('excel-file');
-
 changeEventListener(saleforceId);
+
+const employeeName = document.getElementById('Employee_Name');
 changeEventListener(employeeName);
+
+
+
+
 
 class Excel {
 	constructor(content) {
@@ -19,6 +21,9 @@ class Excel {
 	}
 }
 
+// Read excel file 
+const excelFileElement = document.getElementById('excel-file');
+
 excelFileElement.addEventListener('change', function () {
 	readXlsxFile(excelFileElement.files[0], { sheet: 1 }).then(function (rows) {
 		const xlsx = new Excel(rows);
@@ -27,15 +32,19 @@ excelFileElement.addEventListener('change', function () {
 	})
 })
 
+
+// Event when btn submit
+const formElement = document.getElementById('form');
+
 formElement.addEventListener("submit", function (e) {
 	e.preventDefault()
 
 	let formData = new FormData(form);
 	console.log(formData)
 	formData = [...formData];
-	console.log("FormData as Array:", formData);
-	// const station = stationElement.value.slice(6);
-	// console.log(station)
+
+	console.log("Form data converted as array:", formData);
+	
 	let information = "";
 
 	let additionalInfo = document.getElementById('info').value;
@@ -52,6 +61,7 @@ formElement.addEventListener("submit", function (e) {
 	});
 
 	let formDataObj = Object.fromEntries(formData);
+
 	localStorage.setItem(formDataObj.Cand_id, JSON.stringify(formDataObj));
 
 

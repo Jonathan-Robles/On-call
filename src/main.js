@@ -44,7 +44,7 @@ formElement.addEventListener("submit", function (e) {
 	formData.forEach(y => {
 		if (y[0] !== 'info') {
 			if (y[0] == 'sf_link') {
-				information += y[0] +' : '+ `<a href="${y[1]}" target="_blank">${formData[3][1]}</a> <br>`;
+				information += y[0] +' : '+ `<a href="${y[1]}" target="_blank"> ${formData[3][1]}</a> <br>`;
 			}else{
 				information += `  ${y[0]} : ${y[1]}  <br>`;
 			}

@@ -3,6 +3,14 @@
         "abbr": "Choose...",
         "station": " "
     },
+        {
+        "abbr": "HZ",
+        "station": "Aspinwall "
+    },
+        {
+        "abbr": "UD",
+        "station": "Oakland "
+    },
     {
         "abbr": "BBT",
         "station": "Alpine BPS"
